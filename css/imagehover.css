@@ -14,7 +14,7 @@
 }
 .hovereffect .overlay {
     width: 350px;
-    height: 265px;
+    height: 295px;
     position: absolute;
     overflow: hidden;
     top: 0;
@@ -53,14 +53,25 @@
     /* Remember to change it back to normal font size if have captions */
     
     list-style: none;
-    background-color: #000;
+    background-color: #787878;
 }
 #rig li {
     display: inline-block;
     *display: inline;
     /*for IE6 - IE7*/
     
-    width: 25%;
+    width: 35%;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#rig ul {
+    display: inline-block;
+    *display: inline;
+    /*for IE6 - IE7*/
+    
+    width: 35%;
     vertical-align: middle;
     box-sizing: border-box;
     margin: 0;
@@ -88,6 +99,9 @@
 #rig li:hover .rig-img {
     transform: scale(1.05);
 }
+#rig ul:hover .rig-img {
+    transform: scale(1.05);
+}
 /* If have the overlay layer */
 
 .rig-overlay {
@@ -113,6 +127,13 @@
     
     transition-delay: .5s;
 }
+#rig ul:hover .rig-overlay {
+    opacity: 0.8;
+    -webkit-transition-delay: .5s;
+    /* Safari */
+    
+    transition-delay: .5s;
+}
 .proj-title {
     position: absolute;
     z-index: 10;
@@ -127,13 +148,18 @@
 }
 #coverTxt {
     top: 30%;
-    font-size: 60px;
+    font-size: 45px;
     font: 'Courier New';
     line-height: 110%;
     font-weight: 300;
 }
 
 #rig li:hover .proj-title {
+    transition: all 0.3s ease-out 0s;
+    transform: translateX(-20px);
+    opacity: 0;
+}
+#rig ul:hover .proj-title {
     transition: all 0.3s ease-out 0s;
     transform: translateX(-20px);
     opacity: 0;
@@ -170,12 +196,28 @@
     
     transition-delay: .5s;
 }
+#rig ul:hover .rig-text {
+    transform: translateY(0px);
+    opacity: 0.9;
+    -webkit-transition-delay: .5s;
+    /* Safari */
+    
+    transition-delay: .5s;
+}
 @media (max-width: 9000px) {
+    #rig ul {
+        width: 28%;
+        margin-left: 60px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
     #rig li {
         width: 40%;
-        margin-left: 95px;
-        margin-top: 50px;
+        margin-left: 100px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
+
 }
 @media (max-width: 1600px) {
     .rig-text h2 {
@@ -198,9 +240,15 @@
     #rig li {
         width: 33.33%;
     }
+    #rig ul {
+        width: 33.33%;
+    }
 }
 @media (max-width: 800px) {
     #rig li {
+        width: 50%;
+    }
+    #rig ul {
         width: 50%;
     }
     .rig-text h6 {
@@ -212,6 +260,9 @@
 }
 @media (max-width: 500px) {
     #rig li {
+        width: 100%;
+    }
+    #rig ul {
         width: 100%;
     }
     .rig-text h6 {
